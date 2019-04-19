@@ -6,14 +6,14 @@ import { ApolloProvider } from 'react-apollo'
 import Customers from './Components/Customers'
 
 const client = new ApolloClient({
-	uri: 'localhost:4000/graphql'
+	uri: 'http://localhost:4000/graphql'
 })
 
 class App extends Component {
 	render() {
 		return (
-			<ApolloProvider>
-				<div className='App' client={client}>
+			<ApolloProvider client={client}>
+				<div className='App'>
 					<header className='App-header'>
 						<img src={logo} className='App-logo' alt='logo' />
 						<p>
