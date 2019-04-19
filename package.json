@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev:server": "nodemon server.js",
-		"json:server": "json-server --watch data.json"
+		"json:server": "json-server --watch customers.json posts.json"
 	},
 	"author": "",
 	"license": "ISC",

@@ -1,0 +1,45 @@
+{
+	"customers": [
+		{
+			"name": "San Panochon",
+			"email": "as@aol.com",
+			"id": "2",
+			"postId": "1"
+		},
+		{
+			"id": "3",
+			"name": "Jose",
+			"email": "jose@gmail.com",
+			"postId": "1"
+		},
+		{
+			"id": "4",
+			"name": "Jerry",
+			"email": "jerry@gmail.com",
+			"postId": "2"
+		},
+		{
+			"id": "5",
+			"name": "Hardik",
+			"email": "hardik@gmail.com",
+			"postId": "3"
+		}
+	],
+	"posts": [
+		{
+			"post_id": "1",
+			"post_title": "Pedro",
+			"post_date": "April"
+		},
+		{
+			"post_id": "2",
+			"post_title": "Pedro",
+			"post_date": "April"
+		},
+		{
+			"post_id": "3",
+			"post_title": "Pedro",
+			"post_date": "April"
+		}
+	]
+}
