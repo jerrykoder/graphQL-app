@@ -1,20 +1,21 @@
-import React, { Component } from 'react'
-import gql from 'graphql-tag'
-import { Query } from 'react-apollo'
+import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { Query } from 'react-apollo';
 
 const CUSTOMERS_QUERY = gql`
 	query CustomersQuery {
 		customers {
 			id
 			name
-			email
-			post {
-				post_title
-				post_date
+			date
+			products {
+				id
+				product
+				price
 			}
 		}
 	}
-`
+`;
 
 export default class Customers extends Component {
 	render() {
@@ -23,21 +24,28 @@ export default class Customers extends Component {
 				<h1>Customers</h1>
 				<Query query={CUSTOMERS_QUERY}>
 					{({ loading, error, data }) => {
-						if (loading) return <p>Loading...</p>
-						if (error) return <p>Error :(</p>
+						if (loading) return <p>Loading...</p>;
+						if (error) return <p>Error :(</p>;
 
-						console.log(data)
+						console.log(data);
 
-						return data.customers.map(({ id, name, email }) => (
+						return data.customers.map(({ id, name, date, products }) => (
 							<div key={id}>
 								<p>
-									{name}: {email}
+									{name}: {date}
 								</p>
+								{products.map(({ id, product, price }) => (
+									<div key={id}>
+										<p>
+											{product}: {price}
+										</p>
+									</div>
+								))}
 							</div>
-						))
+						));
 					}}
 				</Query>
 			</div>
-		)
+		);
 	}
 }
